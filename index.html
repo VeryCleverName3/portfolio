@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carter Semrad</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+</head>
+<style>
+
+    html{
+        overflow-x: hidden;
+    }
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .bg{
+        z-index: -999;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        /*top: 0%;
+        left: 0%;*/
+    }
+
+    #raymarchingbg{
+        background-image: url('images/btstu.png');
+        filter: blur(1vh) brightness(80%);
+        background-size: 100%;
+        transform: scale(1.1) translate(0px,-10vh);
+        
+        
+    }
+    #cpwbg{
+        background-image: url('images/graphs.png');
+        filter: blur(1vh) brightness(80%);
+        background-size: 100%;
+        transform: scale(1.1);
+        
+    }
+
+    #wrapper1{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+    #wrapper2{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+
+    #topWrapper{
+        background-color: #fff;
+        color: #000;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    #myname{
+        font-size: 6vh;
+    }
+
+    #img1{
+        width: 60vh;
+        height: 80vh;
+        object-fit: cover;
+        position: absolute;
+        left: 10%;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+
+    #cover1{
+        width: 60vh;
+        height: 80vh;
+        object-fit: cover;
+        position: absolute;
+        left: 10%;
+        text-align: center;
+        padding: 0px;
+    }
+
+    #img2{
+        width: 70vh;
+        height: 35vh;
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    #cover2{
+        width: 70vh;
+        height: 35vh;
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+    }
+    #img3{
+        width: 35vh;
+        height: 40vh;
+        top: 52%;
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    #img4{
+        width: 35vh;
+        height: 40vh;
+        top: 52%;
+        object-fit: cover;
+        position: absolute;
+        left: calc(50% + 35vh);
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+
+    #cover3{
+        width: 70vh;
+        height: 40vh;
+        object-fit: cover;
+        position: absolute;
+        left: 50%;
+        top: 52%;
+    }
+
+    #img5{
+        width: 60vh;
+        height: 80vh;
+        object-fit: cover;
+        position: absolute;
+        left: 55%;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+
+    #cover5{
+        width: 60vh;
+        height: 80vh;
+        object-fit: cover;
+        position: absolute;
+        left: 55%;
+    }
+
+    #img6{
+        width: 70vh;
+        height: 35vh;
+        object-fit: cover;
+        position: absolute;
+        left: 10%;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    #cover6{
+        width: 70vh;
+        height: 35vh;
+        object-fit: cover;
+        position: absolute;
+        left: 10%;
+    }
+
+    #img7{
+        width: 40vh;
+        height: 40vh;
+        top: 52%;
+        object-fit: cover;
+        position: absolute;
+        left: 10%;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    #img8{
+        width: 30vh;
+        height: 40vh;
+        top: 52%;
+        object-fit: cover;
+        position: absolute;
+        left: calc(10% + 40vh);
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    #cover7{
+        width: 70vh;
+        height: 40vh;
+        top: 52%;
+        object-fit: cover;
+        position: absolute;
+        left: 10%;
+    }
+
+    .wrapper{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: white;
+        overflow: hidden;
+        
+    }
+
+    #breakwrapper1{
+        background-color: #e63946;
+        color: #1d3557;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    #breakwrapper2{
+        background-color: #eaac8b;
+        color: #6d597a;
+        box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+    }
+    p{
+        margin-left: 7vw;
+        font-size: 3vh;
+    }
+
+    .wrapper h1{
+        margin-left: 5vw;
+    }
+
+    .cover{
+        color: rgba(0,0,0,0);
+        background-color: rgba(0,0,0,0);
+        transition: all 0.5s ease-out 100ms;
+        vertical-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    .cover:hover{
+        color: white;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .cover h1{
+        margin-left: 0px;
+        margin-top: 0vh;
+        font-size: 6vh;
+    }
+    .cover p{
+        margin-left: 4vh;
+        margin-right: 4vh;
+    }
+
+    .wrap{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    @media(max-width: 800px){
+        html{
+            overflow-x: hidden;
+        }
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .bg{
+            z-index: -999;
+            width: 100%;
+            height: calc(15vh + 240vw);
+            position: absolute;
+            /*top: 0%;
+            left: 0%;*/
+        }
+
+        #raymarchingbg{
+            background-image: url('images/btstu.png');
+            filter: blur(1vh) brightness(80%);
+            background-size: 100%;
+            transform: scale(1.1) translate(0px, -10vh);
+            
+        }
+        #cpwbg{
+            background-image: url('images/graphs.png');
+            filter: blur(1vh) brightness(80%);
+            background-size: 100%;
+            transform: scale(1.1);
+            
+        }
+
+        #wrapper1{
+            width: 100vw;
+            height: calc(15vh + 240vw);
+            position: relative;
+        }
+        #wrapper2{
+            width: 100vw;
+            height: calc(15vh + 220vw);
+            position: relative;
+        }
+
+        #topWrapper{
+            background-color: #fff;
+            color: #000;
+            box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+        }
+        #myname{
+            font-size: 6vh;
+        }
+
+        #img1{
+            position: absolute;
+            left: 0%;
+            width: 100vw;
+            height: 60vw;
+            top:15vh;
+            object-fit: cover;
+        }
+
+        #cover1{
+            position: absolute;
+            left: 0%;
+            width: 100vw;
+            height: 60vw;
+            top:15vh;
+            object-fit: cover;
+        }
+
+        #img2{
+            width: 100vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 60vw);
+        }
+        #cover2{
+            width: 100vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 60vw);
+        }
+        #img3{
+            width: 100vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 120vw);
+        }
+        #img4{
+            width: 100vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 180vw);
+        }
+
+        #cover3{
+            width: 100vw;
+            height: 120vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 120vw);
+        }
+
+        #img5{
+            width: 100vw;
+            height: 100vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 60vw);
+        }
+
+        #cover5{
+            width: 100vw;
+            height: 100vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 60vw);
+        }
+
+        #img6{
+            width: 100vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh);
+        }
+        #cover6{
+            width: 100vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh);
+        }
+
+        #img7{
+            width: 60vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 160vw);
+        }
+        #img8{
+            width: 40vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 60vw;
+            top: calc(15vh + 160vw);
+        }
+        #cover7{
+            width: 100vw;
+            height: 60vw;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: calc(15vh + 160vw);
+        }
+
+        .wrapper{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            overflow: hidden;
+            
+        }
+
+        #breakwrapper1{
+            background-color: #e63946;
+            color: #1d3557;
+            box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+        }
+        #breakwrapper2{
+            background-color: #eaac8b;
+            color: #6d597a;
+            box-shadow: 2px 2px 10px 10px rgba(0,0,0,0.3);
+        }
+        p{
+            margin-left: 7vw;
+            font-size: 2vh;
+        }
+
+        .wrapper h1{
+            margin-left: 5vw;
+            font-size: 3vh
+        }
+
+        .cover{
+            color: rgba(0,0,0,0);
+            background-color: rgba(0,0,0,0);
+            transition: all 0.5s ease-out 100ms;
+            vertical-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            text-align: center;
+        }
+
+        .cover:hover{
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .cover h1{
+            margin-left: 0px;
+            margin-top: 0vh;
+            font-size: 4vh;
+        }
+        .cover p{
+            margin-left: 4vh;
+            margin-right: 4vh;
+            font-size: 2vh;
+        }
+
+        .wrap{
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+<body>
+    <!--
+        My Projects: 
+        (raymarching), (code per week), misc (includes dhfm?)
+        blurred background of project screenshots, links to individual project pages
+        thin white outline for screenshots?
+        good font choice
+
+        screenshot of jackrabbit min | smin
+
+        raymarching: jackrabbit, fridge, ptica/demo
+        *all of these projects have file sizes less than the file sizes of their screenshots!
+
+        code per week: 
+        *i made one project every week for a year.
+        (ai)dventure - i used the GPT3 api (that chatGPT was originally made with) several months before chatGPT came out.
+        tensorflow - MTG card GAN
+        mc-automata: GPU accelerated MNCA model
+
+
+
+    -->
+    <div class="wrapper" id="topWrapper">
+        <h1 id="myname">I'm Carter Semrad.</h1>
+        <h1>Here are some of my projects.</h1>
+    </div>
+    <div class="wrapper" id="wrapper1">
+        <br>
+        <h1>Raymarching</h1>
+        <div class = "bg" id = "raymarchingbg"></div>
+        <img src="images/jackrabbit.png" id="img1">
+        <div id="cover1" class="cover">
+            <div class = "wrap">
+                <h1>Jackrabbit</h1>
+                <p>A splitscreen 2-player soccer game, rendered and animated with only signed distance functions and procedural patterns. The physics engine is also hand-made and based on SDFs.</p>
+                
+            </div>
+        </div>
+        <img src="images/fridge.png" id="img2">
+        <div id="cover2" class="cover">
+            <div class = "wrap">
+                <h1>Fridge</h1>
+                <p>
+                    A 3d modeling software that uses SDFs. Instead of making polygon meshes, 
+                    it creates parameterized 3d models, kind of like the 3d version of vector images.
+                </p>
+                
+            </div>
+        </div>
+        <img src="images/btstu.png" id="img3">
+        <img src="images/ptica.png" id="img4">
+
+        <div id="cover3" class="cover">
+            <div class = "wrap">
+                <h1>Ptica/Demos</h1>
+                <p>
+                    A series of small games that I made to learn about different techniques in graphics programming.
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="wrapper" id="breakwrapper1">
+        <h1>The above projects were all made with only math.</h1>
+        <p>
+            None of the above projects have images or 3d models included in their assets. <br>
+            Instead, they use Signed Distance Fields (SDFs) and are rendered using sphere-assisted raymarching.<br>
+            As a consequence, they all have instantaneous load times and can run in realtime on modern web browsers.
+        </p>
+    </div>
+    <div class="wrapper" id="wrapper2">
+        <div class="bg" id = "cpwbg"></div>
+        <br>
+        <h1>Code Per Week</h1>
+        <img src="images/mtgaAI.png" id="img5">
+        <div id="cover5" class="cover">
+            <div class = "wrap">
+                <h1>AI/ML</h1>
+                <p>
+                    During the year, I made several AI projects, including a GAN that makes magic cards (pictured),
+                     a genetic algorithm that learns to play flappy bird, and an adventure game that made use of OpenAI's 
+                     GPT-3 Davinci API before ChatGPT came out.
+                </p>
+                
+            </div>
+        </div>
+        <img src="images/mcautomata.png" id="img6">
+        <div id="cover6" class="cover">
+            <div class = "wrap">
+                <h1>Math Models</h1>
+                <p>
+                    Many projects were mathematical models, including GPU-Accelerated multi-neighborhood
+                     cellular automata, a Julia set plotter, a 3d grapher, and Langton's Ant.
+                </p>
+                
+            </div>
+        </div>
+        <img src="images/chess.png" id="img7">
+        <img src="images/rogueish.png" id="img8">
+        <div id="cover7" class="cover">
+            <div class = "wrap">
+                <h1>Games</h1>
+                <p>
+                    Some of the projects were games, including the pictured online chess variant and ASCII dungeon game. 
+                </p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="wrapper" id="breakwrapper2">
+        <h1>I coded a new project every week for a year.</h1>
+        <p>
+            These projects included AI, mathematical models/advanced algorithms, and a few online multiplayer games.<br>
+            They used Tensorflow, Node.js, WebGL, OpenCV, and (interestingly) the GPT-3 Davinci API before ChatGPT came out.<br>
+
+        </p>
+    </div>
+
+</body>
+</html>
