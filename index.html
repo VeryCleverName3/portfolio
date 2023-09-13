@@ -441,15 +441,15 @@
         .cover{
             color: rgba(0,0,0,0);
             background-color: rgba(0,0,0,0);
-            transition: all 0.5s ease-out 100ms;
             vertical-align: center;
             align-items: center;
             justify-content: center;
             display: flex;
             text-align: center;
+            transition: none;
         }
 
-        .cover:hover{
+        .cover:hover, .cover:active{
             color: white;
             background-color: rgba(0,0,0,0.5);
         }
@@ -497,6 +497,7 @@
     <div class="wrapper" id="topWrapper">
         <h1 id="myname">I'm Carter Semrad.</h1>
         <h1>Here are some of my projects.</h1>
+        <br><br><br>
     </div>
     <div class="wrapper" id="wrapper1">
         <br>
@@ -589,6 +590,6 @@
 
         </p>
     </div>
-
+<script>document.addEventListener("touchstart", function() {}, true);</script>
 </body>
 </html>
